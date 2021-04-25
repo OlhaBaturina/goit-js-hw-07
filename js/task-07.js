@@ -10,6 +10,3 @@ function changeFontSize(event) {
     
     refs.text.style.fontSize =  size + 'px';
     }
-
-
-
