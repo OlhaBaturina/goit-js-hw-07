@@ -1,19 +1,17 @@
-// Напиши скрипт, который бы при потере фокуса на инпуте,
-//     проверял его содержимое 
-// на правильное количество символов.
+const refs = {
+input: document.querySelector('#validation-input'),
+valid: document.querySelector('.valid'),
+invalid: document.querySelector('.invalid'),
+};
 
-// <input
-//   type="text"
-//   id="validation-input"
-//   data-length="6"
-//   placeholder="Введи 6 символов"
-// />
+refs.input.addEventListener('blur', onInputValue);
 
-//     Сколько символов должно быть в инпуте, 
-// указывается в его атрибуте data - length.
-// Если введено подходящее количество, 
-// то border инпута становится зеленым, 
-// если неправильное - красным.
-// Для добавления стилей, используй CSS - классы
-// valid и invalid.
+function onInputValue(event) {
+    event.currentTarget.classList.add('invalid');
+    if (event.currentTarget.value.length === 6) {
+        event.currentTarget.classList.remove('invalid');
+        event.currentTarget.classList.add('valid');
+    }
+}
+
 
