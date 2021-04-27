@@ -9,16 +9,10 @@ decrement: document.querySelector('[data-action="decrement"]'),
 refs.decrement.addEventListener('click', onDecrement);
 refs.increment.addEventListener('click', onIncrement);
 
-function onIncrement(event) {
-    if (event.currentTarget) {
-        counterValue += 1;
-    }
-    return refs.value.textContent = counterValue;
+function onIncrement() {
+        refs.value.textContent = counterValue += 1;
 }
 
-function onDecrement(event) {
-      if (event.currentTarget) {
-        counterValue -= 1;
-    }
-    return refs.value.textContent = counterValue;
+function onDecrement() {
+        refs.value.textContent =counterValue -= 1;
 }
